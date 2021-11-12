@@ -4,4 +4,5 @@ class List < ApplicationRecord
   validates :name, uniqueness: true
   validates :name, presence: true
   has_one_attached :photo
+   has_many :reviews, dependent: :destroy
 end
