@@ -35,3 +35,6 @@ uri = "http://tmdb.lewagon.com/movie/top_rated"
   end
 end
 puts "Movies created"
+
+
+bg-banner = "https://gallery.yopriceville.com/var/resizes/Backgrounds/Cinema_Background.jpg?m=1399672800"

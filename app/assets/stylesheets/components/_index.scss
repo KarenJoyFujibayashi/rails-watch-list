@@ -1,0 +1,18 @@
+@import "components/banner";
+@import "components/cards";
+
+.container{
+  color: rgb(2, 146, 146);
+  h3{
+    color: $dark-blue;
+    font-weight: bold;
+  }
+  .btn{
+    border: 1px solid $blue;
+    transition: 1s;
+  }
+  .btn:hover{
+    color: $super-light;
+    background-color: $dark-dark-blue;
+  }
+}

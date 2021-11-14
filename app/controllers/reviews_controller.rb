@@ -3,10 +3,10 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @list = List.find(params[:list_id])
     @review.list = @list
-    if review.save
+    if @review.save
       redirect_to list_path(@list)
     else
-      render 'list/show'
+      render 'lists/show'
     end
   end
 
@@ -19,6 +19,6 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:comment, :rating, :photo)
+    params.require(:review).permit(:comment, :rating)
   end
 end

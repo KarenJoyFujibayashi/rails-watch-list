@@ -1,21 +1,22 @@
-<div class="banner"style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://c.stocksy.com/a/hrv400/z9/1175749.jpg);">>
-  <h1 class="text-white font-weight-normal home-5-title mb-0">MOVIES</h1>
-  <p class="text-white-70 mt-4 f-15 mb-0">Listing your favorite movies....</p>
-  <%= link_to 'Create a movie list', new_list_path, class: 'btn-btn-flat'%>
-  <%= link_to 'Create a movie list', new_list_path, class: 'btn-btn-flat'%>
+<div class="banner mb-4 d-flex align-items-center justify-content-center" >
+  <div class="text-center text-white mt-5">
+    <h1>Save any kind of movies</h1>
+  </div>
 </div>
-
-
-<div class="card">
-<h3>My list</h3>
-  <% @lists.each do |list| %>
-  <div class="col-12 colsm-6 col-md-4">
-    <% link_to list_path(list), class:'text-decoration-none' do %>
-        <div class="card-category" style ="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path('logo.png')%>)">
-        <%= list.name %>
-        </div>
-      <% end %>
+<div class="container py-5">
+  <div class="d-flex align-items-center justify-content-between mb-3">
+    <h3 class="mb-0">MY LISTS</h3>
+    <%= link_to 'Create a movie list', new_list_path, class: 'btn btn-flat' %>
+  </div>
+  <div class="row">
+    <% @lists.each do |list| %>
+      <div class="card-list col-12 colsm-6 col-md-4 mb-3">
+        <%= link_to list_path(list), class:'text-decoration-none' do %>
+          <div class="card-category" data-aos="zoom-in" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : asset_path('card.jpeg') %>)">
+            <%= list.name %>
+          </div>
+        <% end %>
       </div>
-      <% end %>
+    <% end %>
   </div>
 </div>
